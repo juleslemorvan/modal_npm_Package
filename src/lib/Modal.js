@@ -1,12 +1,15 @@
 import "./modal.css";
 
-const Modal = () => {
+const Modal = ({ open, onClose }) => {
+  if (!open) return null;
   return (
     <div className="modal">
       <div className="overlay"></div>
       <div className="modal-content">
         <h2>Employee Created !</h2>
-        <button className="close-modal">Close</button>
+        <button onClick={onClose} className="close-modal">
+          Close
+        </button>
       </div>
     </div>
   );
